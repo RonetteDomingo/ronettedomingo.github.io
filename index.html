@@ -4,76 +4,103 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>S-Class VA</title>
-    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #120B08;
+            color: #ffffff;
+        }
+        header {
+            background-color: #78420B;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 4px solid #C1914D;
+        }
+        header img {
+            max-height: 80px;
+        }
+        nav {
+            background-color: #A16A27;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+        nav a:hover {
+            color: #C1914D;
+        }
+        main {
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+            background-color: #1f140f;
+            border-radius: 10px;
+        }
+        section {
+            margin-bottom: 40px;
+        }
+        h1, h2 {
+            color: #C1914D;
+        }
+        footer {
+            background-color: #78420B;
+            text-align: center;
+            padding: 10px;
+            color: #ffffff;
+            border-top: 4px solid #C1914D;
+        }
+        .blog-post {
+            background-color: #2e1b13;
+            padding: 15px;
+            border-left: 5px solid #C1914D;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+    </style>
 </head>
 <body>
-
-    <!-- HEADER -->
     <header>
-        <div class="container header-content">
-            <img src="assets/images/logo.png" alt="S-Class VA Logo" class="logo">
-            <h1>S-Class VA</h1>
-        </div>
+        <img src="logo.png" alt="S-Class VA Logo">
+        <h1>Welcome to S-Class VA</h1>
     </header>
-
-    <!-- ABOUT -->
-    <section class="about">
-        <div class="container">
+    <nav>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#blog">S-Class Insights</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <main>
+        <section id="about">
             <h2>About Me</h2>
-            <div class="about-content">
-                <img src="assets/images/myphoto.jpg" alt="Ronette Domingo" class="profile-photo">
-                <p>Hello! I’m <strong>Ronette Domingo</strong>, the founder of S-Class VA. I am a highly motivated Virtual Assistant with strong communication skills and a C2-level English proficiency. I specialize in administrative tasks, graphic design, data entry, and social media management. I’m self-taught in web development — in fact, I developed this website myself without paying anything. I’m always ready to learn new skills quickly and adapt to your needs.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- SERVICES -->
-    <section class="services">
-        <div class="container">
+            <p>I am Ronette Domingo, your professional Virtual Assistant — delivering top-notch services with excellence and precision.</p>
+        </section>
+        <section id="services">
             <h2>Services</h2>
             <ul>
-                <li>📊 Data Entry</li>
-                <li>🎨 Graphic Design</li>
-                <li>📱 Social Media Management</li>
-                <li>💻 Virtual Assistance</li>
+                <li>Data Entry</li>
+                <li>Graphic Design</li>
+                <li>Social Media Management</li>
             </ul>
-        </div>
-    </section>
-
-    <!-- BLOG -->
-    <section class="blog">
-        <div class="container">
+        </section>
+        <section id="blog">
             <h2>S-Class Insights</h2>
             <div class="blog-post">
                 <h3>Welcome to My Blog</h3>
-                <p>This is where I’ll share tips, productivity hacks, and success stories from my VA journey. Stay tuned!</p>
+                <p>Stay tuned for productivity tips, client success stories, and VA industry insights.</p>
             </div>
-        </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section class="contact">
-        <div class="container">
+        </section>
+        <section id="contact">
             <h2>Contact Me</h2>
-            <form action="https://formspree.io/f/mkgnrwkz" method="POST">
-                <label>Name:</label>
-                <input type="text" name="name" required>
-
-                <label>Email:</label>
-                <input type="email" name="email" required>
-
-                <label>Message:</label>
-                <textarea name="message" rows="4" required></textarea>
-
-                <button type="submit">Send</button>
-            </form>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
+            <p>Email: <a href="mailto:ronettedomingo.va@gmail.com">ronettedomingo.va@gmail.com</a></p>
+        </section>
+    </main>
     <footer>
-        <p>© 2025 S-Class VA | All Rights Reserved</p>
+        <p>© 2025 S-Class VA. All Rights Reserved.</p>
     </footer>
-
 </body>
 </html>
