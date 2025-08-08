@@ -1,10 +1,9 @@
-/* General Styles */
+/* Global Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #ffffff;
-    color: #120B08;
+    color: #ffffff;
     line-height: 1.6;
 }
 
@@ -25,44 +24,74 @@ header {
     gap: 15px;
 }
 header h1 {
-    color: #78420B;
-    font-size: 2rem;
+    color: #120B08;
+    font-size: 2.2rem;
 }
 .logo {
-    width: 60px;
+    width: 70px;
     height: auto;
 }
 
 /* About Section */
+.about {
+    background-color: #120B08;
+}
+.about h2 {
+    color: #C1914D;
+}
 .about-content {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     gap: 20px;
 }
+.about p {
+    color: #ffffff;
+}
 .profile-photo {
-    width: 150px;
+    width: 180px;
     border-radius: 50%;
+    border: 3px solid #C1914D;
 }
 
 /* Services */
+.services {
+    background-color: #78420B;
+}
+.services h2 {
+    color: #C1914D;
+}
 .services ul {
     list-style: none;
     padding: 0;
 }
 .services li {
-    padding: 8px 0;
-    font-size: 1.1rem;
+    background-color: #A16A27;
+    margin-bottom: 8px;
+    padding: 10px;
+    border-radius: 5px;
 }
 
 /* Blog */
+.blog {
+    background-color: #120B08;
+}
+.blog h2 {
+    color: #C1914D;
+}
 .blog-post {
-    border-left: 4px solid #A16A27;
-    padding-left: 10px;
-    margin-bottom: 15px;
+    background-color: #A16A27;
+    padding: 15px;
+    border-radius: 5px;
 }
 
 /* Contact */
+.contact {
+    background-color: #78420B;
+}
+.contact h2 {
+    color: #C1914D;
+}
 form {
     display: flex;
     flex-direction: column;
@@ -71,37 +100,39 @@ form {
 form input, form textarea, form button {
     padding: 10px;
     margin-bottom: 10px;
-    border: 1px solid #C1914D;
     border-radius: 5px;
+    border: none;
+}
+form input, form textarea {
+    background-color: #ffffff;
+    color: #120B08;
 }
 form button {
-    background-color: #78420B;
-    color: white;
-    border: none;
+    background-color: #C1914D;
+    color: #120B08;
     cursor: pointer;
+    font-weight: bold;
 }
 form button:hover {
     background-color: #A16A27;
+    color: #ffffff;
 }
 
 /* Footer */
 footer {
-    text-align: center;
-    padding: 15px;
     background-color: #C1914D;
     color: #120B08;
+    text-align: center;
+    padding: 15px;
 }
 
-/* Mobile Responsive */
+/* Responsive */
 @media (max-width: 768px) {
     .about-content {
         flex-direction: column;
         text-align: center;
     }
     header h1 {
-        font-size: 1.5rem;
-    }
-    .logo {
-        width: 50px;
+        font-size: 1.6rem;
     }
 }
