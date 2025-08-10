@@ -35,7 +35,7 @@
         color: #C1914D;
     }
     .section {
-        padding: 40px 20px;
+        padding: 40px 20px; 
         max-width: 1000px;
         margin: auto;
     }
@@ -44,15 +44,30 @@
         border-bottom: 2px solid #A16A27;
         padding-bottom: 10px;
     }
+    .blog-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+        margin-top: 20px;
+    }
     .blog-post {
         background-color: #78420B;
         padding: 15px;
         border-radius: 8px;
-        margin-bottom: 20px;
     }
     .blog-post h3 {
         margin-top: 0;
         color: #ffffff;
+    }
+    .blog-post p {
+        color: #ffffff;
+    }
+    .blog-post a {
+        color: #C1914D;
+        text-decoration: none;
+    }
+    .blog-post a:hover {
+        text-decoration: underline;
     }
     footer {
         background-color: #A16A27;
@@ -82,17 +97,10 @@
     <a href="insights.html">Insights</a>
 </nav>
 
-<section class="section">
+<section class="section" id="blog-section">
     <h2>Latest Insights</h2>
-    
-    <!-- Example Blog Posts -->
-    <div class="blog-post">
-        <h3>Insight Title 1</h3>
-        <p>Your insight content here...</p>
-    </div>
-    <div class="blog-post">
-        <h3>Insight Title 2</h3>
-        <p>Your insight content here...</p>
+    <div id="blog-posts" class="blog-container">
+        <!-- Blog posts will be loaded here dynamically -->
     </div>
 </section>
 
@@ -102,5 +110,30 @@
     <p>🌐 Linktree: <a href="https://linktr.ee/ronettedomingo" target="_blank">linktr.ee/ronettedomingo</a></p>
 </footer>
 
+<script>
+  async function loadPosts() {
+    try {
+      const response = await fetch('https://raw.githubusercontent.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME/main/posts/posts.json');
+      const posts = await response.json();
+
+      const blogContainer = document.getElementById('blog-posts');
+      blogContainer.innerHTML = posts.map(post => `
+        <div class="blog-post">
+          <h3>${post.title}</h3>
+          <p><em>${post.date}</em></p>
+          <p>${post.excerpt}</p>
+          <a href="${post.url}">Read More</a>
+        </div>
+      `).join('');
+    } catch (error) {
+      console.error('Error loading posts:', error);
+    }
+  }
+
+  loadPosts();
+</script>
+
 </body>
+</html>
+
 </html>
