@@ -103,6 +103,36 @@
         <!-- Blog posts will be loaded here dynamically -->
     </div>
 </section>
+    <section id="insights">
+  <h2>S-Class Insights</h2>
+  <div id="blog-container"></div>
+</section>
+
+<script>
+  fetch('/posts/posts.json')
+    .then(response => response.json())
+    .then(posts => {
+      const container = document.getElementById('blog-container');
+      container.innerHTML = ''; // Clear any old content
+
+      // Show latest posts first
+      posts.reverse().forEach(post => {
+        const postElement = document.createElement('article');
+        postElement.innerHTML = `
+          <h3>${post.title}</h3>
+          <p><small>${new Date(post.date).toLocaleDateString()}</small></p>
+          ${post.image ? `<img src="${post.image}" alt="${post.title}" style="max-width:100%; height:auto;">` : ''}
+          <div>${post.body}</div>
+        `;
+        container.appendChild(postElement);
+      });
+    })
+    .catch(err => {
+      console.error('Error loading blog posts:', err);
+      document.getElementById('blog-container').innerHTML = '<p>Unable to load posts at the moment.</p>';
+    });
+</script>
+
 
 <footer>
     <p>📧 Email: <a href="mailto:ronettedomingo.va@gmail.com">ronettedomingo.va@gmail.com</a></p>
