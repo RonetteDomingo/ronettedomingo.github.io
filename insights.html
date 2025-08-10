@@ -1,139 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>S-Class Insights</title>
 <style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        background-color: #120B08;
-        color: #ffffff;
-    }
-    header {
-        background-color: #78420B;
-        padding: 20px;
-        text-align: center;
-    }
-    header h1 {
-        color: #C1914D;
-        margin: 0;
-    }
-    nav {
-        background-color: #A16A27;
-        padding: 10px;
-        text-align: center;
-    }
-    nav a {
-        color: #ffffff;
-        margin: 0 15px;
-        text-decoration: none;
-        font-weight: bold;
-    }
-    nav a:hover {
-        color: #C1914D;
-    }
-    .section {
-        padding: 40px 20px; 
-        max-width: 1000px;
-        margin: auto;
-    }
-    h2 {
-        color: #C1914D;
-        border-bottom: 2px solid #A16A27;
-        padding-bottom: 10px;
-    }
-    .blog-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 20px;
-        margin-top: 20px;
-    }
-    .blog-post {
-        background-color: #78420B;
-        padding: 15px;
-        border-radius: 8px;
-    }
-    .blog-post h3 {
-        margin-top: 0;
-        color: #ffffff;
-    }
-    .blog-post p {
-        color: #ffffff;
-    }
-    .blog-post a {
-        color: #C1914D;
-        text-decoration: none;
-    }
-    .blog-post a:hover {
-        text-decoration: underline;
-    }
-    footer {
-        background-color: #A16A27;
-        color: #ffffff;
-        padding: 20px;
-        text-align: center;
-    }
-    footer a {
-        color: #ffffff;
-        text-decoration: none;
-        margin: 0 10px;
-    }
-    footer a:hover {
-        color: #C1914D;
-    }
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #120B08;
+    color: #ffffff;
+  }
+  header {
+    background-color: #78420B;
+    padding: 20px;
+    text-align: center;
+  }
+  header h1 {
+    color: #C1914D;
+    margin: 0;
+  }
+  nav {
+    background-color: #A16A27;
+    padding: 10px;
+    text-align: center;
+  }
+  nav a {
+    color: #ffffff;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  nav a:hover {
+    color: #C1914D;
+  }
+  main {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 0 20px;
+  }
+  article {
+    background-color: #78420B;
+    border-radius: 8px;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+  }
+  article h2 {
+    margin-top: 0;
+    color: #C1914D;
+  }
+  article p.date {
+    font-style: italic;
+    color: #D9C491;
+    margin-bottom: 10px;
+  }
+  article p.excerpt {
+    color: #ffffff;
+  }
+  article a.read-more {
+    display: inline-block;
+    margin-top: 10px;
+    color: #C1914D;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  article a.read-more:hover {
+    text-decoration: underline;
+  }
+  footer {
+    background-color: #A16A27;
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+  }
+  footer a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 10px;
+  }
+  footer a:hover {
+    color: #C1914D;
+  }
 </style>
 </head>
 <body>
-
 <header>
-    <h1>S-Class Insights</h1>
+  <h1>S-Class Insights</h1>
 </header>
-
 <nav>
-    <a href="index.html">Home</a>
-    <a href="portfolio.html">Portfolio</a>
-    <a href="insights.html">Insights</a>
+  <a href="index.html">Home</a>
+  <a href="portfolio.html">Portfolio</a>
+  <a href="insights.html">Insights</a>
 </nav>
-
-<section class="section" id="blog-section">
-    <h2>Latest Insights</h2>
-    <div id="blog-posts" class="blog-container">
-        <!-- Blog posts will be loaded here dynamically -->
+<main>
+  <article>
+    <h2>5 Tools Every Virtual Assistant Should Use</h2>
+    <p class="date">2025-08-01 | Productivity</p>
+    <p class="excerpt">Discover the top tools that will help you stay efficient, organized, and ahead of your tasks...</p>
+    <a href="#post1" class="read-more" onclick="togglePost('post1');return false;">Read More</a>
+    <div id="post1" style="display:none; margin-top:10px; color:#fff;">
+      <p>Here’s the full content of the blog post. You can write as much as you want here, and it will stay hidden until you click 'Read More'.</p>
+      <p>Include tips, explanations, and examples to help your readers.</p>
     </div>
-</section>
+  </article>
 
+  <article>
+    <h2>How I Found My Course as a Virtual Assistant</h2>
+    <p class="date">2025-08-05 | Testimonials</p>
+    <p class="excerpt">My journey from the maritime industry to the digital world of virtual assistance...</p>
+    <a href="#post2" class="read-more" onclick="togglePost('post2');return false;">Read More</a>
+    <div id="post2" style="display:none; margin-top:10px; color:#fff;">
+      <p>This is the detailed story of my course discovery and what made me switch careers. Sharing experiences can inspire others!</p>
+      <p>Feel free to include screenshots or links.</p>
+    </div>
+  </article>
+
+  <!-- Add more blog posts here by copying the <article> block and updating the IDs -->
+</main>
 <footer>
-    <p>📧 Email: <a href="mailto:ronettedomingo.va@gmail.com">ronettedomingo.va@gmail.com</a></p>
-    <p>📱 WhatsApp: <a href="https://wa.me/639156044525" target="_blank">+639156044525</a></p>
-    <p>🌐 Linktree: <a href="https://linktr.ee/ronettedomingo" target="_blank">linktr.ee/ronettedomingo</a></p>
+  <p>📧 Email: <a href="mailto:ronettedomingo.va@gmail.com">ronettedomingo.va@gmail.com</a></p>
+  <p>📱 WhatsApp: <a href="https://wa.me/639156044525" target="_blank">+639156044525</a></p>
+  <p>🌐 Linktree: <a href="https://linktr.ee/ronettedomingo" target="_blank">linktr.ee/ronettedomingo</a></p>
 </footer>
 
 <script>
-  async function loadPosts() {
-    try {
-      const response = await fetch('https://raw.githubusercontent.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME/main/posts/posts.json');
-      const posts = await response.json();
-
-      const blogContainer = document.getElementById('blog-posts');
-      blogContainer.innerHTML = posts.map(post => `
-        <div class="blog-post">
-          <h3>${post.title}</h3>
-          <p><em>${post.date}</em></p>
-          <p>${post.excerpt}</p>
-          <a href="${post.url}">Read More</a>
-        </div>
-      `).join('');
-    } catch (error) {
-      console.error('Error loading posts:', error);
-    }
+function togglePost(id) {
+  const el = document.getElementById(id);
+  if(el.style.display === "none") {
+    el.style.display = "block";
+  } else {
+    el.style.display = "none";
   }
-
-  loadPosts();
+}
 </script>
-
 </body>
 </html>
 
-</html>
