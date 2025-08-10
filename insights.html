@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>S-Class Insights</title>
 <style>
     body {
@@ -83,67 +83,38 @@
     footer a:hover {
         color: #C1914D;
     }
-    /* Floating + button */
-    .add-post-btn {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        background: #f90;
-        color: #fff;
+
+    /* Additional styles for Insights section */
+    .section-title {
         font-size: 2rem;
-        padding: 10px 15px;
-        border-radius: 50%;
+        font-weight: bold;
+        color: #78420B;
+        margin: 0;
+    }
+    .insights-header {
+        display: flex;
+        align-items: center;
+        border-bottom: 2px solid #C1914D;
+        padding-bottom: 0.5rem;
+        margin-bottom: 1rem;
+        gap: 0.5rem; /* space between title and button */
+    }
+
+    .add-post-btn {
+        font-size: 1.5rem;
+        background: #C1914D;
+        color: white;
         text-decoration: none;
+        padding: 0.2rem 0.6rem;
+        border-radius: 50%;
+        font-weight: bold;
+        transition: background 0.3s;
         box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        position: static; /* no fixed positioning */
     }
     .add-post-btn:hover {
-        background: #ffb84d;
+        background: #A16A27;
     }
-    <section class="latest-insights">
-    <div class="insights-header">
-        <h2 class="section-title">Latest Insights</h2>
-        <a href="/admin/#/collections/posts/new" class="add-post-btn">+</a>
-    </div>
-    <div id="blog-container" class="blog-container">
-        <!-- Blog posts will be loaded here dynamically -->
-    </div>
-</section>
-
-<style>
-/* Match section title style */
-.section-title {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #78420B;
-    margin: 0;
-}
-
-/* Flex layout for title + plus sign */
-.insights-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 2px solid #C1914D;
-    padding-bottom: 0.5rem;
-    margin-bottom: 1rem;
-}
-
-/* Plus button style */
-.add-post-btn {
-    font-size: 1.5rem;
-    background: #C1914D;
-    color: white;
-    text-decoration: none;
-    padding: 0.2rem 0.6rem;
-    border-radius: 50%;
-    font-weight: bold;
-    transition: background 0.3s;
-}
-
-.add-post-btn:hover {
-    background: #A16A27;
-}
-</style>
 </style>
 </head>
 <body>
@@ -159,13 +130,14 @@
 </nav>
 
 <section class="section" id="blog-section">
-    <h2>Latest Insights</h2>
+    <div class="insights-header">
+        <h2 class="section-title">Latest Insights</h2>
+        <a href="/admin/#/collections/posts/new" class="add-post-btn" title="Add New Post">+</a>
+    </div>
     <div id="blog-container" class="blog-container">
         <!-- Blog posts will be loaded here dynamically -->
     </div>
 </section>
-
-<a href="/admin/#/collections/posts/new" class="add-post-btn">+</a>
 
 <script>
 fetch('/posts/posts.json')
@@ -194,8 +166,8 @@ fetch('/posts/posts.json')
 
 <footer>
     <p>📧 Email: <a href="mailto:ronettedomingo.va@gmail.com">ronettedomingo.va@gmail.com</a></p>
-    <p>📱 WhatsApp: <a href="https://wa.me/639156044525" target="_blank">+639156044525</a></p>
-    <p>🌐 Linktree: <a href="https://linktr.ee/ronettedomingo" target="_blank">linktr.ee/ronettedomingo</a></p>
+    <p>📱 WhatsApp: <a href="https://wa.me/639156044525" target="_blank" rel="noopener noreferrer">+639156044525</a></p>
+    <p>🌐 Linktree: <a href="https://linktr.ee/ronettedomingo" target="_blank" rel="noopener noreferrer">linktr.ee/ronettedomingo</a></p>
 </footer>
 
 </body>
