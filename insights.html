@@ -83,6 +83,22 @@
     footer a:hover {
         color: #C1914D;
     }
+    /* Floating + button */
+    .add-post-btn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #f90;
+        color: #fff;
+        font-size: 2rem;
+        padding: 10px 15px;
+        border-radius: 50%;
+        text-decoration: none;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+    .add-post-btn:hover {
+        background: #ffb84d;
+    }
 </style>
 </head>
 <body>
@@ -99,40 +115,37 @@
 
 <section class="section" id="blog-section">
     <h2>Latest Insights</h2>
-    <div id="blog-posts" class="blog-container">
+    <div id="blog-container" class="blog-container">
         <!-- Blog posts will be loaded here dynamically -->
     </div>
 </section>
-    <section id="insights">
-  <h2>S-Class Insights</h2>
-  <div id="blog-container"></div>
-</section>
+
+<a href="/admin/#/collections/posts/new" class="add-post-btn">+</a>
 
 <script>
-  fetch('/posts/posts.json')
-    .then(response => response.json())
-    .then(posts => {
-      const container = document.getElementById('blog-container');
-      container.innerHTML = ''; // Clear any old content
+fetch('/posts/posts.json')
+  .then(response => response.json())
+  .then(posts => {
+    const container = document.getElementById('blog-container');
+    container.innerHTML = ''; // Clear any old content
 
-      // Show latest posts first
-      posts.reverse().forEach(post => {
-        const postElement = document.createElement('article');
-        postElement.innerHTML = `
-          <h3>${post.title}</h3>
-          <p><small>${new Date(post.date).toLocaleDateString()}</small></p>
-          ${post.image ? `<img src="${post.image}" alt="${post.title}" style="max-width:100%; height:auto;">` : ''}
-          <div>${post.body}</div>
-        `;
-        container.appendChild(postElement);
-      });
-    })
-    .catch(err => {
-      console.error('Error loading blog posts:', err);
-      document.getElementById('blog-container').innerHTML = '<p>Unable to load posts at the moment.</p>';
+    posts.reverse().forEach(post => {
+      const postElement = document.createElement('div');
+      postElement.classList.add('blog-post');
+      postElement.innerHTML = `
+        <h3>${post.title}</h3>
+        <p><small>${new Date(post.date).toLocaleDateString()}</small></p>
+        ${post.image ? `<img src="${post.image}" alt="${post.title}" style="max-width:100%; height:auto;">` : ''}
+        <p>${post.body}</p>
+      `;
+      container.appendChild(postElement);
     });
+  })
+  .catch(err => {
+    console.error('Error loading blog posts:', err);
+    document.getElementById('blog-container').innerHTML = '<p>Unable to load posts at the moment.</p>';
+  });
 </script>
-
 
 <footer>
     <p>📧 Email: <a href="mailto:ronettedomingo.va@gmail.com">ronettedomingo.va@gmail.com</a></p>
@@ -140,30 +153,5 @@
     <p>🌐 Linktree: <a href="https://linktr.ee/ronettedomingo" target="_blank">linktr.ee/ronettedomingo</a></p>
 </footer>
 
-<script>
-  async function loadPosts() {
-    try {
-      const response = await fetch('https://raw.githubusercontent.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME/main/posts/posts.json');
-      const posts = await response.json();
-
-      const blogContainer = document.getElementById('blog-posts');
-      blogContainer.innerHTML = posts.map(post => `
-        <div class="blog-post">
-          <h3>${post.title}</h3>
-          <p><em>${post.date}</em></p>
-          <p>${post.excerpt}</p>
-          <a href="${post.url}">Read More</a>
-        </div>
-      `).join('');
-    } catch (error) {
-      console.error('Error loading posts:', error);
-    }
-  }
-
-  loadPosts();
-</script>
-
 </body>
-</html>
-
 </html>
