@@ -99,6 +99,51 @@
     .add-post-btn:hover {
         background: #ffb84d;
     }
+    <section class="latest-insights">
+    <div class="insights-header">
+        <h2 class="section-title">Latest Insights</h2>
+        <a href="/admin/#/collections/posts/new" class="add-post-btn">+</a>
+    </div>
+    <div id="blog-container" class="blog-container">
+        <!-- Blog posts will be loaded here dynamically -->
+    </div>
+</section>
+
+<style>
+/* Match section title style */
+.section-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #78420B;
+    margin: 0;
+}
+
+/* Flex layout for title + plus sign */
+.insights-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #C1914D;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Plus button style */
+.add-post-btn {
+    font-size: 1.5rem;
+    background: #C1914D;
+    color: white;
+    text-decoration: none;
+    padding: 0.2rem 0.6rem;
+    border-radius: 50%;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.add-post-btn:hover {
+    background: #A16A27;
+}
+</style>
 </style>
 </head>
 <body>
