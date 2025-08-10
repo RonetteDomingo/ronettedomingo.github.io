@@ -8,7 +8,9 @@ public_folder: "/uploads"
 collections:
   - name: "posts"
     label: "Blog Posts"
-    file: "posts/posts.json"
+    folder: "posts"
+create: true
+slug: "{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
